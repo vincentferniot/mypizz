@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <h1>Restaurants très bon !</h1>
+    {% for letter in 'a'..'z' %}
+        <li>{{ letter }}</li>
+    {% endfor %}
+{% endblock %}

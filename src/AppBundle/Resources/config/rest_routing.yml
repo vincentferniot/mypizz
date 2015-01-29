@@ -1,0 +1,5 @@
+rest_routes_restaurant:
+    type: rest
+    prefix: /v1
+    resource: "AppBundle\Controller\RestaurantController"
+    name_prefix:  api_1_
