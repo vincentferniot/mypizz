@@ -1,4 +1,4 @@
-/web/bundles/
+/web/*
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
@@ -10,3 +10,8 @@
 /vendor/
 /bin/
 /composer.phar
+/node_modules/*
+/bower_components/*
+/.tmp
+/.sass-cache
+/.idea/*

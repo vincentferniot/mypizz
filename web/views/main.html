@@ -1,0 +1,17 @@
+<div class="row marketing">
+
+    <div class="col-md-6">
+        <h2>Trouvez votre camion pizza</h2>
+        <div>
+
+            <!-- zone de saisie d�clenchant l'autocompl�tion -->
+            <input placeholder="Nom de la ville" type="text" ng-model="asyncSelected" typeahead="city for city in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control">
+
+        </div>
+        <ul class="clearfix">
+            <li ng-repeat="restaurant in restaurants" class="col-lg-6 list-unstyled">
+                <h2><i class="glyphicon glyphicon-apple"></i> {{ restaurant.name }}</h2>
+            </li>
+        </ul>
+    </div>
+</div>
