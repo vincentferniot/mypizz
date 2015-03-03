@@ -38,17 +38,17 @@ angular.module('myPizzApp')
 
 
 
-        $http.get('http://mypizz.local/api/v1/restaurants.json').
-            success(function(data) {
-                //success(function(data, status, headers, config) {
-                console.log('données chargées')
-                $scope.restaurants = data.restaurants;
-
-
-            }).
-            error(function() {
-                //error(function(data, status, headers, config) {
-                // log error
-            });
+        //$http.get('http://mypizz.local/api/v1/restaurants.json').
+        //    success(function(data) {
+        //        //success(function(data, status, headers, config) {
+        //        console.log('données chargées')
+        //        $scope.restaurants = data.restaurants;
+        //
+        //
+        //    }).
+        //    error(function() {
+        //        //error(function(data, status, headers, config) {
+        //        // log error
+        //    });
 
     }]);
