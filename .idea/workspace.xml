@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4e77624-9ba1-4289-95d4-ce5a635f0ff9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Company.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Company.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/ProductCategory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/ProductCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/app/SymfonyRequirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Vacation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Vacation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/action_provision" afterPath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/action_provision" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/action_set_name" afterPath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/action_set_name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/id" afterPath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/id" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/index_uuid" afterPath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/index_uuid" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/private_key" afterPath="$PROJECT_DIR$/vagrant/.vagrant/machines/default/virtualbox/private_key" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mypizz.iws" />
@@ -92,8 +81,8 @@
           <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-                  <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.34188035" vertical-offset="0" max-vertical-offset="702">
+                  <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -146,7 +135,6 @@
         <option value="$PROJECT_DIR$/app/Resources/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/main.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Resources/scripts/controllers/main.js" />
         <option value="$PROJECT_DIR$/../../../sites/wheels-and-waves.com/site/wp-config.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
@@ -156,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ProductCategory.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -810,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.34188035" vertical-offset="0" max-vertical-offset="702">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
