@@ -75,6 +75,18 @@ class Company
      */
     private $product;
 
+    /**
+     * @var Period
+     * @ORM\OneToMany(targetEntity="Period", mappedBy="company")
+     */
+    private $period;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $address;
+
 
     /**
      * Get id
@@ -229,6 +241,7 @@ class Company
     public function __construct()
     {
         $this->vacation = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->product = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -263,5 +276,39 @@ class Company
     public function getVacation()
     {
         return $this->vacation;
+    }
+
+    /**
+     * Add product
+     *
+     * @param \AppBundle\Entity\Product $product
+     *
+     * @return Company
+     */
+    public function addProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \AppBundle\Entity\Product $product
+     */
+    public function removeProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

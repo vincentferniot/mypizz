@@ -71,6 +71,12 @@ class Product
     private $productCatgeory;
 
     /**
+     * @var ProductTag
+     * @ORM\OneToMany(targetEntity="ProductTag", mappedBy="product")
+     */
+    private $productTag;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -217,5 +223,70 @@ class Product
     public function getCompany()
     {
         return $this->company;
+    }
+
+    /**
+     * Set productCatgeory
+     *
+     * @param \AppBundle\Entity\ProductCategory $productCatgeory
+     *
+     * @return Product
+     */
+    public function setProductCatgeory(\AppBundle\Entity\ProductCategory $productCatgeory = null)
+    {
+        $this->productCatgeory = $productCatgeory;
+
+        return $this;
+    }
+
+    /**
+     * Get productCatgeory
+     *
+     * @return \AppBundle\Entity\ProductCategory
+     */
+    public function getProductCatgeory()
+    {
+        return $this->productCatgeory;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->productTag = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add productTag
+     *
+     * @param \AppBundle\Entity\ProductTag $productTag
+     *
+     * @return Product
+     */
+    public function addProductTag(\AppBundle\Entity\ProductTag $productTag)
+    {
+        $this->productTag[] = $productTag;
+
+        return $this;
+    }
+
+    /**
+     * Remove productTag
+     *
+     * @param \AppBundle\Entity\ProductTag $productTag
+     */
+    public function removeProductTag(\AppBundle\Entity\ProductTag $productTag)
+    {
+        $this->productTag->removeElement($productTag);
+    }
+
+    /**
+     * Get productTag
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProductTag()
+    {
+        return $this->productTag;
     }
 }

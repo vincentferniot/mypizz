@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\Company;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -97,6 +96,12 @@ class User
      * @ORM\OneToMany(targetEntity="Company", mappedBy="user")
      */
     private $company;
+
+    /**
+     * @var City
+     * @ORM\OneToOne(targetEntity="City")
+     */
+    private $city;
 
     /**
      * Get id
@@ -386,5 +391,29 @@ class User
     public function setCompany(\Doctrine\Common\Collections\Collection $company)
     {
         $this->company = $company;
+    }
+
+    /**
+     * Set city
+     *
+     * @param \AppBundle\Entity\City $city
+     *
+     * @return User
+     */
+    public function setCity(\AppBundle\Entity\City $city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \AppBundle\Entity\City
+     */
+    public function getCity()
+    {
+        return $this->city;
     }
 }

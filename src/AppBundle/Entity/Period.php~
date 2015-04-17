@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Period
  *
- * @ORM\Table()
+ * @ORM\Table(name="period")
  * @ORM\Entity
  */
 class Period
@@ -50,6 +50,12 @@ class Period
     private $monLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $monLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="mon_dinner_from", type="time")
@@ -62,6 +68,12 @@ class Period
      * @ORM\Column(name="mon_dinner_to", type="time")
      */
     private $monDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $monDinnerAddress;
 
     /**
      * @var \DateTime
@@ -78,6 +90,12 @@ class Period
     private $tueLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $tueLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="tue_dinner_from", type="time")
@@ -90,6 +108,12 @@ class Period
      * @ORM\Column(name="tue_dinner_to", type="time")
      */
     private $tueDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $tueDinnerAddress;
 
     /**
      * @var \DateTime
@@ -106,6 +130,12 @@ class Period
     private $wedLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $wedLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="wed_dinner_from", type="time")
@@ -118,6 +148,12 @@ class Period
      * @ORM\Column(name="wed_dinner_to", type="time")
      */
     private $wedDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $wedDinnerAddress;
 
     /**
      * @var \DateTime
@@ -134,6 +170,12 @@ class Period
     private $thuLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $thuLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="thu_dinner_from", type="time")
@@ -146,6 +188,12 @@ class Period
      * @ORM\Column(name="thu_dinner_to", type="time")
      */
     private $thuDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $thuDinnerAddress;
 
     /**
      * @var \DateTime
@@ -162,6 +210,12 @@ class Period
     private $friLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $friLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="fri_dinner_from", type="time")
@@ -174,6 +228,12 @@ class Period
      * @ORM\Column(name="fri_dinner_to", type="time")
      */
     private $friDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $friDinnerAddress;
 
     /**
      * @var \DateTime
@@ -190,6 +250,12 @@ class Period
     private $satLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $satLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="sat_dinner_from", type="time")
@@ -202,6 +268,12 @@ class Period
      * @ORM\Column(name="sat_dinner_to", type="time")
      */
     private $satDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $satDinnerAddress;
 
     /**
      * @var \DateTime
@@ -218,6 +290,12 @@ class Period
     private $sunLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $sunLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="sun_dinner_from", type="time")
@@ -230,6 +308,19 @@ class Period
      * @ORM\Column(name="sun_dinner_to", type="time")
      */
     private $sunDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $sunDinnerAddress;
+
+    /**
+     * @var Company
+     *
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="company")
+     */
+    private $company;
 
 
     /**

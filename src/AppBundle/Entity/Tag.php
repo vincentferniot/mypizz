@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Tag
  *
- * @ORM\Table()
+ * @ORM\Table(name="tag")
  * @ORM\Entity
  */
 class Tag
@@ -41,6 +41,12 @@ class Tag
      * @ORM\Column(name="image_path", type="string", length=500)
      */
     private $imagePath;
+
+    /**
+     * @var ProductTag
+     * @ORM\OneToMany(targetEntity="ProductTag", mappedBy="tag")
+     */
+    private $productTag;
 
 
     /**
@@ -120,5 +126,46 @@ class Tag
     public function getImagePath()
     {
         return $this->imagePath;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->productTag = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add productTag
+     *
+     * @param \AppBundle\Entity\ProductTag $productTag
+     *
+     * @return Tag
+     */
+    public function addProductTag(\AppBundle\Entity\ProductTag $productTag)
+    {
+        $this->productTag[] = $productTag;
+
+        return $this;
+    }
+
+    /**
+     * Remove productTag
+     *
+     * @param \AppBundle\Entity\ProductTag $productTag
+     */
+    public function removeProductTag(\AppBundle\Entity\ProductTag $productTag)
+    {
+        $this->productTag->removeElement($productTag);
+    }
+
+    /**
+     * Get productTag
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProductTag()
+    {
+        return $this->productTag;
     }
 }

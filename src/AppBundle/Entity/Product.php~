@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Product
  *
- * @ORM\Table()
+ * @ORM\Table(name="product")
  * @ORM\Entity
  */
 class Product
@@ -62,6 +62,19 @@ class Product
      * @ORM\ManyToOne(targetEntity="Company", inversedBy="company")
      */
     private $company;
+
+    /**
+     * @var ProductCategory
+     *
+     * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="product_category")
+     */
+    private $productCatgeory;
+
+    /**
+     * @var ProductTag
+     * @ORM\OneToMany(targetEntity="ProductTag", mappedBy="product")
+     */
+    private $productTag;
 
     /**
      * Get id
@@ -186,5 +199,53 @@ class Product
     public function getImagePath()
     {
         return $this->imagePath;
+    }
+
+    /**
+     * Set company
+     *
+     * @param \AppBundle\Entity\Company $company
+     *
+     * @return Product
+     */
+    public function setCompany(\AppBundle\Entity\Company $company = null)
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return \AppBundle\Entity\Company
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Set productCatgeory
+     *
+     * @param \AppBundle\Entity\ProductCategory $productCatgeory
+     *
+     * @return Product
+     */
+    public function setProductCatgeory(\AppBundle\Entity\ProductCategory $productCatgeory = null)
+    {
+        $this->productCatgeory = $productCatgeory;
+
+        return $this;
+    }
+
+    /**
+     * Get productCatgeory
+     *
+     * @return \AppBundle\Entity\ProductCategory
+     */
+    public function getProductCatgeory()
+    {
+        return $this->productCatgeory;
     }
 }

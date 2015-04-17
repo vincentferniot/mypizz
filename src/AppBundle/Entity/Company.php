@@ -58,7 +58,6 @@ class Company
 
     /**
      * @var User
-     *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="user")
      */
     private $user;
@@ -74,6 +73,18 @@ class Company
      * @ORM\OneToMany(targetEntity="Product", mappedBy="company")
      */
     private $product;
+
+    /**
+     * @var Period
+     * @ORM\OneToMany(targetEntity="Period", mappedBy="company")
+     */
+    private $period;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $address;
 
 
     /**
@@ -229,6 +240,7 @@ class Company
     public function __construct()
     {
         $this->vacation = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->product = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -297,5 +309,63 @@ class Company
     public function getProduct()
     {
         return $this->product;
+    }
+
+    /**
+     * Add period
+     *
+     * @param \AppBundle\Entity\Period $period
+     *
+     * @return Company
+     */
+    public function addPeriod(\AppBundle\Entity\Period $period)
+    {
+        $this->period[] = $period;
+
+        return $this;
+    }
+
+    /**
+     * Remove period
+     *
+     * @param \AppBundle\Entity\Period $period
+     */
+    public function removePeriod(\AppBundle\Entity\Period $period)
+    {
+        $this->period->removeElement($period);
+    }
+
+    /**
+     * Get period
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * Set address
+     *
+     * @param \AppBundle\Entity\Address $address
+     *
+     * @return Company
+     */
+    public function setAddress(\AppBundle\Entity\Address $address = null)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Period
  *
- * @ORM\Table()
+ * @ORM\Table(name="period")
  * @ORM\Entity
  */
 class Period
@@ -50,6 +50,12 @@ class Period
     private $monLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $monLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="mon_dinner_from", type="time")
@@ -62,6 +68,12 @@ class Period
      * @ORM\Column(name="mon_dinner_to", type="time")
      */
     private $monDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $monDinnerAddress;
 
     /**
      * @var \DateTime
@@ -78,6 +90,12 @@ class Period
     private $tueLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $tueLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="tue_dinner_from", type="time")
@@ -90,6 +108,12 @@ class Period
      * @ORM\Column(name="tue_dinner_to", type="time")
      */
     private $tueDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $tueDinnerAddress;
 
     /**
      * @var \DateTime
@@ -106,6 +130,12 @@ class Period
     private $wedLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $wedLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="wed_dinner_from", type="time")
@@ -118,6 +148,12 @@ class Period
      * @ORM\Column(name="wed_dinner_to", type="time")
      */
     private $wedDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $wedDinnerAddress;
 
     /**
      * @var \DateTime
@@ -134,6 +170,12 @@ class Period
     private $thuLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $thuLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="thu_dinner_from", type="time")
@@ -146,6 +188,12 @@ class Period
      * @ORM\Column(name="thu_dinner_to", type="time")
      */
     private $thuDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $thuDinnerAddress;
 
     /**
      * @var \DateTime
@@ -162,6 +210,12 @@ class Period
     private $friLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $friLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="fri_dinner_from", type="time")
@@ -174,6 +228,12 @@ class Period
      * @ORM\Column(name="fri_dinner_to", type="time")
      */
     private $friDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $friDinnerAddress;
 
     /**
      * @var \DateTime
@@ -190,6 +250,12 @@ class Period
     private $satLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $satLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="sat_dinner_from", type="time")
@@ -202,6 +268,12 @@ class Period
      * @ORM\Column(name="sat_dinner_to", type="time")
      */
     private $satDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $satDinnerAddress;
 
     /**
      * @var \DateTime
@@ -218,6 +290,12 @@ class Period
     private $sunLunchTo;
 
     /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $sunLunchAddress;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="sun_dinner_from", type="time")
@@ -230,6 +308,19 @@ class Period
      * @ORM\Column(name="sun_dinner_to", type="time")
      */
     private $sunDinnerTo;
+
+    /**
+     * @var Address
+     * @ORM\OneToOne(targetEntity="Address")
+     */
+    private $sunDinnerAddress;
+
+    /**
+     * @var Company
+     *
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="company")
+     */
+    private $company;
 
 
     /**
@@ -930,5 +1021,365 @@ class Period
     public function getSunDinnerTo()
     {
         return $this->sunDinnerTo;
+    }
+
+    /**
+     * Set monLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $monLunchAddress
+     *
+     * @return Period
+     */
+    public function setMonLunchAddress(\AppBundle\Entity\Address $monLunchAddress = null)
+    {
+        $this->monLunchAddress = $monLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get monLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getMonLunchAddress()
+    {
+        return $this->monLunchAddress;
+    }
+
+    /**
+     * Set monDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $monDinnerAddress
+     *
+     * @return Period
+     */
+    public function setMonDinnerAddress(\AppBundle\Entity\Address $monDinnerAddress = null)
+    {
+        $this->monDinnerAddress = $monDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get monDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getMonDinnerAddress()
+    {
+        return $this->monDinnerAddress;
+    }
+
+    /**
+     * Set tueLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $tueLunchAddress
+     *
+     * @return Period
+     */
+    public function setTueLunchAddress(\AppBundle\Entity\Address $tueLunchAddress = null)
+    {
+        $this->tueLunchAddress = $tueLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get tueLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getTueLunchAddress()
+    {
+        return $this->tueLunchAddress;
+    }
+
+    /**
+     * Set tueDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $tueDinnerAddress
+     *
+     * @return Period
+     */
+    public function setTueDinnerAddress(\AppBundle\Entity\Address $tueDinnerAddress = null)
+    {
+        $this->tueDinnerAddress = $tueDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get tueDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getTueDinnerAddress()
+    {
+        return $this->tueDinnerAddress;
+    }
+
+    /**
+     * Set wedLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $wedLunchAddress
+     *
+     * @return Period
+     */
+    public function setWedLunchAddress(\AppBundle\Entity\Address $wedLunchAddress = null)
+    {
+        $this->wedLunchAddress = $wedLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get wedLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getWedLunchAddress()
+    {
+        return $this->wedLunchAddress;
+    }
+
+    /**
+     * Set wedDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $wedDinnerAddress
+     *
+     * @return Period
+     */
+    public function setWedDinnerAddress(\AppBundle\Entity\Address $wedDinnerAddress = null)
+    {
+        $this->wedDinnerAddress = $wedDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get wedDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getWedDinnerAddress()
+    {
+        return $this->wedDinnerAddress;
+    }
+
+    /**
+     * Set thuLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $thuLunchAddress
+     *
+     * @return Period
+     */
+    public function setThuLunchAddress(\AppBundle\Entity\Address $thuLunchAddress = null)
+    {
+        $this->thuLunchAddress = $thuLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get thuLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getThuLunchAddress()
+    {
+        return $this->thuLunchAddress;
+    }
+
+    /**
+     * Set thuDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $thuDinnerAddress
+     *
+     * @return Period
+     */
+    public function setThuDinnerAddress(\AppBundle\Entity\Address $thuDinnerAddress = null)
+    {
+        $this->thuDinnerAddress = $thuDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get thuDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getThuDinnerAddress()
+    {
+        return $this->thuDinnerAddress;
+    }
+
+    /**
+     * Set friLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $friLunchAddress
+     *
+     * @return Period
+     */
+    public function setFriLunchAddress(\AppBundle\Entity\Address $friLunchAddress = null)
+    {
+        $this->friLunchAddress = $friLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get friLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getFriLunchAddress()
+    {
+        return $this->friLunchAddress;
+    }
+
+    /**
+     * Set friDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $friDinnerAddress
+     *
+     * @return Period
+     */
+    public function setFriDinnerAddress(\AppBundle\Entity\Address $friDinnerAddress = null)
+    {
+        $this->friDinnerAddress = $friDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get friDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getFriDinnerAddress()
+    {
+        return $this->friDinnerAddress;
+    }
+
+    /**
+     * Set satLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $satLunchAddress
+     *
+     * @return Period
+     */
+    public function setSatLunchAddress(\AppBundle\Entity\Address $satLunchAddress = null)
+    {
+        $this->satLunchAddress = $satLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get satLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getSatLunchAddress()
+    {
+        return $this->satLunchAddress;
+    }
+
+    /**
+     * Set satDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $satDinnerAddress
+     *
+     * @return Period
+     */
+    public function setSatDinnerAddress(\AppBundle\Entity\Address $satDinnerAddress = null)
+    {
+        $this->satDinnerAddress = $satDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get satDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getSatDinnerAddress()
+    {
+        return $this->satDinnerAddress;
+    }
+
+    /**
+     * Set sunLunchAddress
+     *
+     * @param \AppBundle\Entity\Address $sunLunchAddress
+     *
+     * @return Period
+     */
+    public function setSunLunchAddress(\AppBundle\Entity\Address $sunLunchAddress = null)
+    {
+        $this->sunLunchAddress = $sunLunchAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get sunLunchAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getSunLunchAddress()
+    {
+        return $this->sunLunchAddress;
+    }
+
+    /**
+     * Set sunDinnerAddress
+     *
+     * @param \AppBundle\Entity\Address $sunDinnerAddress
+     *
+     * @return Period
+     */
+    public function setSunDinnerAddress(\AppBundle\Entity\Address $sunDinnerAddress = null)
+    {
+        $this->sunDinnerAddress = $sunDinnerAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get sunDinnerAddress
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getSunDinnerAddress()
+    {
+        return $this->sunDinnerAddress;
+    }
+
+    /**
+     * Set company
+     *
+     * @param \AppBundle\Entity\Company $company
+     *
+     * @return Period
+     */
+    public function setCompany(\AppBundle\Entity\Company $company = null)
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return \AppBundle\Entity\Company
+     */
+    public function getCompany()
+    {
+        return $this->company;
     }
 }
