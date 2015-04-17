@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ProductCategory
+ * City
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class ProductCategory
+class City
 {
     /**
      * @var integer
@@ -28,12 +28,6 @@ class ProductCategory
      */
     private $name;
 
-    /**
-     * @var Product
-     * @ORM\OneToMany(targetEntity="Product", mappedBy="product_category")
-     */
-    private $product;
-
 
     /**
      * Get id
@@ -49,7 +43,7 @@ class ProductCategory
      * Set name
      *
      * @param string $name
-     * @return ProductCategory
+     * @return City
      */
     public function setName($name)
     {
