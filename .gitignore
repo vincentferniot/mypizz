@@ -1,4 +1,7 @@
-/web/
+/web/bundles/
+/web/images/
+/web/scripts/
+/web/styles/
 /app/bootstrap.php.cache
 /app/cache/
 /app/config/parameters.yml
