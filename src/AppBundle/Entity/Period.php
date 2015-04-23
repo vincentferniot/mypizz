@@ -52,6 +52,7 @@ class Period
     /**
      * @var Address
      * @ORM\OneToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      */
     private $monLunchAddress;
 

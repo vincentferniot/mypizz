@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Address
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\AddressRepository")
+ * @ORM\Table(name="address")
+ * @ORM\Entity
  */
 class Address
 {
@@ -24,18 +24,21 @@ class Address
     /**
      * @var City
      * @ORM\OneToOne(targetEntity="City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     private $city;
 
     /**
      * @var Company
      * @ORM\OneToOne(targetEntity="Company")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     private $company;
 
     /**
      * @var Period
      * @ORM\OneToOne(targetEntity="Period")
+     * @ORM\JoinColumn(name="period_id", referencedColumnName="id")
      */
     private $period;
 

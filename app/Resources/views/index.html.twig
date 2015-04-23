@@ -1,4 +1,13 @@
 {% extends "base.html.twig" %}
+
 {% block body %}
-    <h1>Hello très bon !</h1>
+
+
+        <h1>Hello très bon !</h1>
+
+        {% for user in users %}
+            <h2><a href="{{ path('user', { 'id': user.id }) }}">{{ user.firstName }} {{ user.lastName|upper }}</a></h2>
+        {% endfor %}
+
+
 {% endblock %}

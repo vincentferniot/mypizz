@@ -14,10 +14,15 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('index.html.twig');
+//        return $this->userAction();
+        return $this->render(
+            'index.html.twig',
+            $this->userAction()
+        );
     }
 
     /**
+     *
      * This is the documentation description of your method, it will appear
      * on a specific pane. It will read all the text until the first
      * annotation.
@@ -31,8 +36,14 @@ class DefaultController extends Controller
      *  }
      * )
      */
-    public function getUser()
+    public function userAction()
     {
+        $em = $this->getDoctrine()->getManager();
 
+        $entities = $em->getRepository('AppBundle:User')->findAll();
+
+        return array(
+            'users' => $entities,
+        );
     }
 }

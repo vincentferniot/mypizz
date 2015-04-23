@@ -60,6 +60,7 @@ class Product
      * @var Company
      *
      * @ORM\ManyToOne(targetEntity="Company", inversedBy="company")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     private $company;
 
@@ -67,6 +68,7 @@ class Product
      * @var ProductCategory
      *
      * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="product_category")
+     * @ORM\JoinColumn(name="product_category_id", referencedColumnName="id")
      */
     private $productCatgeory;
 

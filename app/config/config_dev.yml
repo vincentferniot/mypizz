@@ -46,8 +46,27 @@ assetic:
 
 bazinga_faker:
     orm: doctrine
+    locale: fr_FR
     entities:
-        AppBundle\Entity\Restaurant:
-            number: 5
+        AppBundle\Entity\City:
+            number: 100
+        AppBundle\Entity\User:
+            number: 20
+        AppBundle\Entity\Company:
+            number: 30
+        AppBundle\Entity\Period:
+            number: 300
+        AppBundle\Entity\Address:
+            number: 300
+        AppBundle\Entity\Vacation:
+            number: 20
+        AppBundle\Entity\ProductCategory:
+            number: 20
+        AppBundle\Entity\Tag:
+            number: 30
+        AppBundle\Entity\Product:
+            number: 100
+        AppBundle\Entity\ProductTag:
+            number: 30
 #swiftmailer:
 #    delivery_address: me@example.com

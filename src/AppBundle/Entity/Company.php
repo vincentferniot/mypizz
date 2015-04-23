@@ -59,6 +59,7 @@ class Company
     /**
      * @var User
      * @ORM\ManyToOne(targetEntity="User", inversedBy="user")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
@@ -83,6 +84,7 @@ class Company
     /**
      * @var Address
      * @ORM\OneToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      */
     private $address;
 

@@ -31,12 +31,14 @@ class City
     /**
      * @var User
      * @ORM\OneToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
     /**
      * @var Address
      * @ORM\OneToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      */
     private $address;
 

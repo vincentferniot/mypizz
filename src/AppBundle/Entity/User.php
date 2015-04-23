@@ -100,6 +100,7 @@ class User
     /**
      * @var City
      * @ORM\OneToOne(targetEntity="City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     private $city;
 

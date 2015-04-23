@@ -12,28 +12,33 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css"/>
+        <link rel="stylesheet" href="/styles/main.css"/>
         <!-- endbuild -->
+
+        {% stylesheets '%kernel.root_dir%/Resources/styles/main.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
     </head>
     <body ng-app="myPizzApp">
-        {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
         <div class="container">
+
             <div class="header">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a ng-href="#/">Camion</a></li>
+                    <li class="active"><a ng-href="#/">Bienvenue</a></li>
                     <li><a ng-href="#/about">A propos</a></li>
-                    <li><a ng-href="#/">Contact</a></li>
+                    <li><a ng-href="#/">Bonjour Anouk</a></li>
                 </ul>
                 <h3 class="text-muted">My Pizz</h3>
             </div>
+
+            {% block body %}{% endblock %}
 
             <div ng-view=""></div>
 
@@ -45,34 +50,37 @@
 
         <!-- build:js(scripts/vendor) scripts/oldieshim.js -->
         <!--[if lt IE 9]>
-        <script src="scripts/vendor/es5-shim.js"></script>
-        <script src="scripts/vendor/json3.js"></script>
+        <!--<script src="scripts/vendor/es5-shim.js"></script>-->
+        {#<script src="scripts/vendor/json3.js"></script>#}
         <![endif]-->
         <!-- endbuild -->
 
         <!-- build:js(app/Resources/scripts/vendor) scripts/vendor/vendor.js -->
-        <script src="scripts/vendor/jquery.js"></script>
-        <script src="scripts/vendor/angular.js"></script>
+        {#<script src="scripts/vendor/jquery.js"></script>#}
+        {#<script src="scripts/vendor/angular.js"></script>#}
         {#<script src="scripts/vendor/bootstrap.js"></script>#}
-        <script src="scripts/vendor/angular-animate.js"></script>
-        <script src="scripts/vendor/angular-cookies.js"></script>
-        <script src="scripts/vendor/angular-resource.js"></script>
-        <script src="scripts/vendor/angular-route.js"></script>
-        <script src="scripts/vendor/angular-sanitize.js"></script>
-        <script src="scripts/vendor/angular-touch.js"></script>
-        <script src="scripts/vendor/ui-bootstrap-0.12.0.js"></script>
+        {#<script src="scripts/vendor/angular-animate.js"></script>#}
+        {#<script src="scripts/vendor/angular-cookies.js"></script>#}
+        {#<script src="scripts/vendor/angular-resource.js"></script>#}
+        {#<script src="scripts/vendor/angular-route.js"></script>#}
+        {#<script src="scripts/vendor/angular-sanitize.js"></script>#}
+        {#<script src="scripts/vendor/angular-touch.js"></script>#}
+        {#<script src="scripts/vendor/ui-bootstrap-0.12.0.js"></script>#}
         <!-- endbuild -->
 
 
         <!-- build:js(scripts) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        {#<script src="scripts/app.js"></script>#}
+        {#<script src="scripts/controllers/main.js"></script>#}
+        {#<script src="scripts/controllers/about.js"></script>#}
         <!-- endbuild -->
 
 
+        {#<script src="{{ asset('js/script.js') }}" type="text/javascript" />#}
 
-
+        {% javascripts '%kernel.root_dir%/Resources/scripts/assetic/*' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
 
     </body>
 </html>

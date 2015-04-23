@@ -39,6 +39,7 @@ class Vacation
      * @var Company
      *
      * @ORM\ManyToOne(targetEntity="Company", inversedBy="company")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     private $company;
 
